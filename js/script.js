@@ -15,6 +15,23 @@
             });
         });
 
+        // SCRIPT PARA ABRIR/FECHAR O DROPDOWN DE IDIOMA
+        document.addEventListener('DOMContentLoaded', () => {
+            const langBtn = document.getElementById('langBtn');
+            const langDropdown = document.querySelector('.lang-dropdown');
+
+            if (langBtn && langDropdown) {
+                langBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    langDropdown.classList.toggle('open');
+                });
+
+                document.addEventListener('click', () => {
+                    langDropdown.classList.remove('open');
+                });
+            }
+        });
+
         // FILTRO PORTFÓLIO
         const filterBtns = document.querySelectorAll('.filter-btn');
         const projectCards = document.querySelectorAll('.project-card');
