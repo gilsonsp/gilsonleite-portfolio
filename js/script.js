@@ -15,22 +15,33 @@
             });
         });
 
-        // SCRIPT PARA ABRIR/FECHAR O DROPDOWN DE IDIOMA
-        document.addEventListener('DOMContentLoaded', () => {
+        // SELETOR DE IDIOMA / LANGUAGE SWITCHER
+       document.addEventListener('DOMContentLoaded', () => {
             const langBtn = document.getElementById('langBtn');
             const langDropdown = document.querySelector('.lang-dropdown');
-
-            if (langBtn && langDropdown) {
-                langBtn.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    langDropdown.classList.toggle('open');
-                });
-
-                document.addEventListener('click', () => {
-                    langDropdown.classList.remove('open');
-                });
+            const langCurrent = document.getElementById('langCurrent');
+        
+            // Busca qual item tem a classe .active e pega o data-lang dele
+            const activeOption = document.querySelector('.lang-option.active');
+            if (activeOption && langCurrent) {
+                const selectedLang = activeOption.getAttribute('data-lang');
+                if (selectedLang) {
+                    langCurrent.textContent = selectedLang;
+                }
             }
+
+    // Toggle para abrir e fechar o dropdown
+    if (langBtn && langDropdown) {
+        langBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            langDropdown.classList.toggle('open');
         });
+
+        document.addEventListener('click', () => {
+            langDropdown.classList.remove('open');
+        });
+    }
+});
 
         // FILTRO PORTFÓLIO
         const filterBtns = document.querySelectorAll('.filter-btn');
