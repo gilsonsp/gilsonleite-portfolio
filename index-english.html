@@ -20,10 +20,12 @@
     <meta property="og:type" content="website">
     <title>Web Developer & HTML Email Marketing | Salesforce Marketing Cloud | Gilson Leite</title>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
+    
+   
 </head>
 <body id="home">
 
@@ -49,10 +51,32 @@
                 <a href="#contact">Contact</a>
                 
                 <!-- SELETOR DE IDIOMA / LANGUAGE SWITCHER -->
-                <div class="lang-switch" style="display: inline-flex; align-items: center; gap: 5px; margin-left: 15px;">
-                    <a href="https://gilsonleite.com/#home" title="Português" style="opacity: 0.6; text-decoration: none;">PT</a>
-                    <span style="opacity: 0.4;">|</span>
-                    <a href="#home" title="English" style="font-weight: bold; text-decoration: underline;">EN</a>
+                <div class="lang-dropdown">
+                    <button class="lang-btn" id="langBtn" aria-haspopup="true" aria-expanded="false" type="button">
+                        <span class="lang-icon-translate">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 8 6 6"/><path d="m4 14 6-6 2 3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></svg>
+                        </span>
+                        <span class="lang-current" id="langCurrent">EN</span>
+                        <i class="fa-solid fa-chevron-down lang-arrow"></i>
+                    </button>
+
+                    <div class="lang-menu" id="langMenu">
+                        <a href="https://gilsonleite.com/index-en.html" class="lang-option active">
+                            <span class="flag">🇺🇸</span>
+                            <span class="lang-label">English</span>
+                            <i class="fa-solid fa-check lang-check"></i>
+                        </a>
+                        <a href="https://gilsonleite.com/index.html" class="lang-option">
+                            <span class="flag">🇧🇷</span>
+                            <span class="lang-label">Português</span>
+                            <i class="fa-solid fa-check lang-check"></i>
+                        </a>
+                        <a href="https://gilsonleite.com/index-es.html" class="lang-option">
+                            <span class="flag">🇪🇸</span>
+                            <span class="lang-label">Español</span>
+                            <i class="fa-solid fa-check lang-check"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -64,8 +88,8 @@
         <div class="hero-text">
             <p class="hero-subtitle">Hi, I'm Gilson Leite</p>
             <h1>
-                <span class="text-gradient">Front-end & Email</span><br>
-                <span class="text-white">Developer</span>
+                <span class="text-gradient">Front-end Developer &</span><br>
+                <span class="text-white">Email Developer</span>
             </h1>
             <div class="hero-experience">
                 <span class="badge-years">10+ years</span>
@@ -497,6 +521,24 @@
     <!-- END SECTION FOOTER  -->
 
     <script src="js/script.js"></script>
+    <script>
+        // SCRIPT PARA ABRIR/FECHAR O DROPDOWN DE IDIOMA
+        document.addEventListener('DOMContentLoaded', () => {
+            const langBtn = document.getElementById('langBtn');
+            const langDropdown = document.querySelector('.lang-dropdown');
+
+            if (langBtn && langDropdown) {
+                langBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    langDropdown.classList.toggle('open');
+                });
+
+                document.addEventListener('click', () => {
+                    langDropdown.classList.remove('open');
+                });
+            }
+        });
+    </script>
     
     <script type="application/ld+json">
     {
