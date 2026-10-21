@@ -1,0 +1,237 @@
+<!-- 
+ %%[
+VAR @nome, @saudacao, @produto
+
+SET @nome = ProperCase(Trim(AttributeValue("PrimeiroNome")))
+SET @produto = AttributeValue("Produto")
+
+IF Empty(@nome) THEN
+    SET @saudacao = "Olá!"
+ELSE
+    SET @saudacao = Concat("Olá, ", @nome, "!")
+ENDIF
+]%%
+ -->
+
+<html lang="pt-br" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml"
+   xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <meta name="viewport" content="width=device-width">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="x-apple-disable-message-reformatting">
+   <meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no">
+    <title>Desafio Círculo CRM - Gilson Leite</title>
+   <style type="text/css">
+       a{
+        text-decoration: none;
+       }
+      
+      table {
+         margin: 0px auto !important;
+         border-collapse: collapse;
+         mso-table-lspace: 0pt;
+         mso-table-rspace: 0pt;
+         font-family: 'Arial', sans-serif;
+         outline: none!important;
+      }
+
+      table td,
+      table tr {
+         border-collapse: collapse;
+         mso-table-lspace: 0pt;
+         mso-table-rspace: 0pt;  
+         outline: none!important;
+      }
+
+      p {
+         margin: 0px !important;
+      }
+        
+       .btn_primary{
+            background:    #15d798;
+            border-radius: 20px;
+            padding:       20px 45px;
+            color:         #ffffff;
+            display:       inline-block;
+            font:          normal 26px/1 "Arial", sans-serif;
+            text-align:    center;
+       }  
+       .show_space_mobile_img_bottom{
+              display:none!important;
+          }
+    
+      @media screen and (max-width: 600px) { 
+          
+         table.deviceWidth {
+            width: 100% !important;
+            min-width: 100% !important;
+         }
+          
+        .deviceWidth_td  {
+            display: block !important;
+            clear: both !important;
+            width: 100% !important;
+            text-align: center !important;
+            padding: 0px !important;
+            min-width: 100% !important;
+            margin: 0 auto !important;
+         }
+          
+          .padding_mobile td {
+              padding: 10%!important;              
+          }  
+          
+          .padding_block_with_icon_mobile {
+              padding: 2% 0!important;              
+          } 
+          
+          .padding_icon_mobile img{
+              text-align: center!important;
+              padding-top: 10px!important;
+          }
+          .padding_text_icon_mobile{
+              text-align: center!important;
+          }  
+          .padding_img_mobile img{
+              text-align: center!important;
+              margin: 0px auto !important;
+          }
+
+         img.imageMobile {
+            width: 100% !important;
+            height: auto !important;
+         } 
+          .show_space_mobile_img_bottom{
+              display:block!important;
+          }
+          .btn_primary{
+              width: 80%!important;
+          }   
+        
+         .text_border_radius{
+            padding: 6px 10px!important;
+          }
+          .padding_top_cta{
+              padding-top: 10px!important;
+          }
+          
+         *.to90 {
+            width: 90%;
+         }  
+          
+           *.to70 {
+            width: 70%;
+         } 
+           *.to50 {
+            width: 50%;
+         } 
+      }
+       
+       @media screen and (max-width: 480px) { 
+       .text_menu_mobile{
+         font-size: 15px!important;
+          }  
+       }
+       
+   </style>
+</head>
+
+<body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #ffffff;">
+   
+   <center style="width: 100%;">
+      <!--[if mso | IE]>
+         <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #ffffff;">
+            <tr>
+               <td>
+                  <![endif]-->
+<table width="600" border="0" align="center" cellpadding="0" cellspacing="0" class="deviceWidth"
+bgcolor="#ffffff"> <!-- START MAIN TABLE-->
+<tr>
+<td valign="top" style="line-height:0px; font-size:0px; margin:0px; background-color: #ffffff;">
+               
+               <!-- header -->
+               <!--Inicio Body-->
+<table width="100%" border="0" cellspacing="0" cellpadding="0" align="center"> <!-- START SECUNDARY TABLE-->
+
+ <!-- START BLOCO SPACE -->
+<tr align="center">
+<td height="10" align="center"></td>
+</tr>
+<!-- END BLOCO SPACE -->
+
+<!-- START BLOCO SAUDAÇÃO (AMPscript) -->
+<tr>
+  <td style="background-color:#ffffff; padding: 10px 30px 0 30px;">
+    <table role="presentation" width="100%" cellpadding="0"
+       cellspacing="0" border="0"
+       style="font-family: Arial, sans-serif; color: #333333;">
+    <tr>
+        <td style="padding: 24px;">
+
+            <h2 style="font-size: 22px; margin: 0 0 16px;">
+                %%=v(@saudacao)=%%
+            </h2>
+
+            <p style="font-size: 16px; line-height: 24px;">
+                Você deixou o produto
+                <strong>%%=v(@produto)=%%</strong>
+                no carrinho. Que tal concluir sua compra?
+            </p>
+
+            <table role="presentation" cellpadding="0"
+                   cellspacing="0" border="0">
+                <tr>
+                    <td bgcolor="#0070C9"
+                        style="border-radius: 4px; text-align: center;">
+                        <a href="https://loja.exemplo/retomar"
+                           target="_blank"
+                           style="display: inline-block;
+                                  padding: 12px 24px;
+                                  font-family: Arial, sans-serif;
+                                  font-size: 16px;
+                                  color: #ffffff;
+                                  text-decoration: none;
+                                  font-weight: bold;">
+                            Voltar ao carrinho
+                        </a>
+                    </td>
+                </tr>
+            </table>
+
+        </td>
+    </tr>
+</table>
+
+  </td>
+</tr>
+<!-- END BLOCO SAUDAÇÃO -->
+    
+    
+ <!-- START BLOCO ESPAÇAMENTO -->
+<tr align="center" bgcolor="#ffffff">
+<td height="20" align="center"></td>
+</tr>
+ <!-- END BLOCO ESPAÇAMENTO -->
+    
+    
+</table> <!-- END SECUNDARY TABLE-->
+
+               <!--FIM Body-->
+               <!-- FOOTER -->
+
+              
+            </td>
+         </tr>
+     <custom name="opencounter" type="tracking"/>
+     </table> <!-- END MAIN TABLE-->
+      <!--[if mso | IE]>
+               </td>
+            </tr>
+         </table>
+         <![endif]-->
+   </center>
+</body>
+
+</html>
